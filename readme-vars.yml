@@ -31,8 +31,8 @@ opt_param_env_vars:
   - {env_var: "RUN_OPTS", env_value: "", desc: "Optionally specify additional arguments to be passed. See Additional runtime parameters."}
 opt_param_device_map: true
 opt_param_devices:
-  - {device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Only needed if you want to use your AMD/Intel GPU for hardware accelerated video encoding (vaapi)."}
-  - {device_path: "/dev/dvb", device_host_path: "/dev/dvb", desc: "Only needed if you want to pass through a DVB card to the container. If you use IPTV or HDHomeRun you can leave it out."}
+  - {device_path: "/dev/dri", device_host_path: "/dev/dri", desc: "Only needed if you want to use your AMD/Intel GPU for hardware accelerated video encoding (vaapi). Note: Exposing devices to a container is not working if docker runs in swarm mode!"}
+  - {device_path: "/dev/dvb", device_host_path: "/dev/dvb", desc: "Only needed if you want to pass through a DVB card to the container. If you use IPTV or HDHomeRun you can leave it out. Note: Exposing devices to a container is not working if docker runs in swarm mode!"}
 optional_block_1: true
 optional_block_1_items:
   - |
